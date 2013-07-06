@@ -1,5 +1,2 @@
-require "cdn_assets/version"
-
-module CdnAssets
-  # Your code goes here...
-end
+require 'cdn_assets/version'
+require 'cdn_assets/railtie' if defined?(Rails)
