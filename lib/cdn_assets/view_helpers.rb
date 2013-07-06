@@ -8,9 +8,14 @@ module CdnAssets
       :font_awesome => "//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css"
     }
 
-    def cdn_asset(asset)
-      url = ASSET_URLS[asset]
-      url.end_with?(".js") ? javascript_include_tag(url) : stylesheet_link_tag(url)
+    def cdn_assets(assets)
+      tags = []
+      assets.each do |asset|
+        url = ASSET_URLS[asset]
+        tags.push url.end_with?(".js") ? javascript_include_tag(url) : stylesheet_link_tag(url)
+      end
+
+      tags.join("\n").html_safe
     end
   end
 end
