@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = CdnAssets::VERSION
   spec.authors       = ["Luke Horvat"]
   spec.email         = ["lukehorvat@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{Quickly and easily include popular CDN assets (e.g. jQuery, Twitter Bootstrap, Font Awesome, etc.) in your Ruby on Rails application.}
+  spec.summary       = %q{Easily include popular CDN assets in your Rails app.}
   spec.homepage      = "https://github.com/lukehorvat/cdn_assets"
   spec.license       = "MIT"
 
