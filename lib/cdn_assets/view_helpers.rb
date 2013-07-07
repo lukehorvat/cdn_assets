@@ -26,11 +26,11 @@ module CdnAssets
       }
     }
 
-    def include_cdn_assets(assets = {})
-      assets.map { |asset, options| include_cdn_asset asset, options }.join("\n").html_safe
+    def cdn_assets(assets = {})
+      assets.map { |asset, options| cdn_asset asset, options }.join("\n").html_safe
     end
 
-    def include_cdn_asset(asset, options = {})
+    def cdn_asset(asset, options = {})
       raise ArgumentError, 'Asset CDN not specified' if !options.has_key? :c
       raise ArgumentError, 'Asset version not specified' if !options.has_key? :v
 
