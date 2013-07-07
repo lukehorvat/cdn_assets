@@ -5,8 +5,8 @@ module CdnAssets
     end
 
     def include_cdn_asset(asset, opts)
-      cdn = opts.delete :c
-      version = opts.delete :v
+      cdn = opts.delete(:c).to_sym
+      version = opts.delete(:v).to_s
 
       case asset
       when :jquery
