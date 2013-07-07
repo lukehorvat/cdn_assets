@@ -1,6 +1,6 @@
 module CdnAssets
   module ViewHelpers
-    ASSET_URLS = {
+    ASSET_CDN_URLS = {
       jquery: {
         google: '//ajax.googleapis.com/ajax/libs/jquery/%s/jquery.min.js',
         cdnjs: '//cdnjs.cloudflare.com/ajax/libs/jquery/%s/jquery.min.js',
@@ -31,13 +31,19 @@ module CdnAssets
     end
 
     def cdn_asset(asset, options = {})
-      raise ArgumentError, 'Asset CDN not specified' if !options.has_key? :c
-      raise ArgumentError, 'Asset version not specified' if !options.has_key? :v
+      cdn = options.delete(:c)
+      raise ArgumentError, 'Asset CDN not specified' if cdn.nil?
 
-      cdn = options.delete(:c).to_sym
-      version = options.delete(:v).to_s
+      version = options.delete(:v)
+      raise ArgumentError, 'Asset version not specified' if version.nil?
 
-      url = ASSET_URLS[asset][cdn] % version
+      cdn_urls = ASSET_CDN_URLS[asset.to_sym]
+      raise ArgumentError, 'Invalid asset name specified' if cdn_urls.nil?
+
+      url = cdn_urls[cdn.to_sym]
+      raise ArgumentError, 'Invalid CDN name specified' if url.nil?
+
+      url = url % version.to_s
       if url.end_with? '.js'
         javascript_include_tag url, options
       elsif url.end_with? '.css'

@@ -29,7 +29,7 @@ cdn_asset :jquery, v: '1.10.1', c: :google
 Which produces the following output:
 
 ```html
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 ```
 
 As can be seen, the first argument to the function is the asset name, and the second is a hash of options containing the version (`v`) and the CDN (`c`) to serve it from. The options hash can also contain anything you would normally pass to a `javascript_include_tag` or a `stylesheet_link_tag`.
