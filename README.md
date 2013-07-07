@@ -23,7 +23,7 @@ $ bundle install
 Anywhere in a view file (e.g. the `<head>` of application.html.erb), use the `include_cdn_asset` function to include a single CDN asset. Example:
 
 ```ruby
-include_cdn_asset :jquery, v: '1.10.2', c: :google
+include_cdn_asset :jquery, v: '1.10.1', c: :google
 ```
 
 Which produces the following output:
