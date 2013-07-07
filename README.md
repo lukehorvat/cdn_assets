@@ -24,5 +24,18 @@ $ bundle install
 
 ## Usage
 
-TODO: Write usage instructions here
+Anywhere in a view file (e.g. the `<head>` of application.html.erb), use the `include_cdn_asset` function to include a single CDN asset. Example:
 
+```ruby
+include_cdn_asset :jquery, { v: '1.8.2', c: :google }
+```
+
+As can be seen, the first argument is the asset name, and the second is a hash of options containing the version (`v`) and the CDN to serve it from (`c`).
+
+You can call that function as many times as you want. But a better way to include **multiple** assets in the same view is to pass a hash to the `include_cdn_assets` (plural) function. Example:
+
+```ruby
+include_cdn_assets bootstrap_css: { v: '2.3.2', c: :netdna }, font_awesome: { v: '3.2.1', c: :cdnjs }
+```
+
+That's it.
