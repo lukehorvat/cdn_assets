@@ -1,23 +1,46 @@
 module CdnAssets
   module ViewHelpers
-    JQUERY_VERSION = Jquery::Rails::JQUERY_VERSION
-
-    def include_cdn_assets(*assets)
-      assets.map { |asset| include_cdn_asset asset }.join("\n").html_safe
+    def include_cdn_assets(assets = {})
+      assets.map { |asset, opts| include_cdn_asset asset, opts }.join("\n").html_safe
     end
 
-    def include_cdn_asset(asset)
+    def include_cdn_asset(asset, opts)
+      cdn = opts.delete :c
+      version = opts.delete :v
+
       case asset
-      when :google_jquery
-        javascript_include_tag  "//ajax.googleapis.com/ajax/libs/jquery/#{JQUERY_VERSION}/jquery.min.js"
-      when :netdna_bootstrap_js
-        javascript_include_tag  "//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"
-      when :netdna_bootstrap_css
-        stylesheet_link_tag     "//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css"
-      when :netdna_bootstrap_no_icons_css
-        stylesheet_link_tag     "//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css"
-      when :netdna_font_awesome
-        stylesheet_link_tag     "//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css"
+      when :jquery
+        version = version.nil? ? Jquery::Rails::JQUERY_VERSION : version
+        case cdn
+        when :google
+          javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/#{version}/jquery.min.js", opts
+        when :jquery
+          javascript_include_tag "//code.jquery.com/jquery-#{version}.min.js", opts
+        when :microsoft
+          javascript_include_tag "//ajax.aspnetcdn.com/ajax/jQuery/jquery-#{version}.min.js", opts
+        when :cdnjs
+          javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/jquery/#{version}/jquery.min.js", opts
+        end
+      when :bootstrap_js
+        case cdn
+        when :netdna
+          javascript_include_tag "//netdna.bootstrapcdn.com/twitter-bootstrap/#{version}/js/bootstrap.min.js", opts
+        end
+      when :bootstrap_css
+        case cdn
+        when :netdna
+          stylesheet_link_tag "//netdna.bootstrapcdn.com/twitter-bootstrap/#{version}/css/bootstrap-combined.min.css", opts
+        end
+      when :bootstrap_no_icons_css
+        case cdn
+        when :netdna
+          stylesheet_link_tag "//netdna.bootstrapcdn.com/twitter-bootstrap/#{version}/css/bootstrap-combined.no-icons.min.css", opts
+        end
+      when :font_awesome
+        case cdn
+        when :netdna
+          stylesheet_link_tag "//netdna.bootstrapcdn.com/font-awesome/#{version}/css/font-awesome.min.css", opts
+        end
       end
     end
   end
