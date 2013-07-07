@@ -40,5 +40,14 @@ You can call the function as many times as you want, but if you want to include 
 include_cdn_assets bootstrap_css: { v: '2.3.2', c: :netdna }, font_awesome: { v: '3.2.1', c: :cdnjs }
 ```
 
+## Supported Assets & CDNs
 
+Below is a matrix showing the assets and CDNs currently supported by this gem. A `+` indicates something *is* supported. Use the exact names listed here as symbols or strings in your code.
 
+|                        | google | netdna | cdnjs | microsoft |
+|:-----------------------|:------:|:------:|:-----:|:---------:|
+| jquery                 | +      |        | +     | +         |
+| bootstrap_css          |        | +      |       |           |
+| bootstrap_no_icons_css |        | +      |       |           |
+| bootstrap_js           |        | +      | +     |           |
+| font_awesome           |        | +      | +     |           |
