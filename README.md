@@ -26,12 +26,19 @@ Anywhere in a view file (e.g. the `<head>` of application.html.erb), use the `in
 include_cdn_asset :jquery, v: '1.10.2', c: :google
 ```
 
-As can be seen, the first argument is the asset name, and the second is a hash of options containing the version (`v`) and the CDN to serve it from (`c`).
+Which produces the following output:
 
-You can call that function as many times as you want. But a better way to include **multiple** assets in the same view is to pass a hash to the `include_cdn_assets` (plural) function. Example:
+```html
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+```
+
+As can be seen, the first argument to the function is the asset name, and the second is a hash of options containing the version (`v`) and the CDN (`c`) to serve it from. The options hash can also contain anything you would normally pass to a `javascript_include_tag` or a `stylesheet_link_tag`.
+
+You can call the function as many times as you want, but if you want to include **multiple** assets in the same view, then a better way is to pass a hash to the `include_cdn_assets` (plural) function. Example:
 
 ```ruby
 include_cdn_assets bootstrap_css: { v: '2.3.2', c: :netdna }, font_awesome: { v: '3.2.1', c: :cdnjs }
 ```
 
-That's it.
+
+
