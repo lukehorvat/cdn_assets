@@ -4,7 +4,10 @@ module CdnAssets
       assets.map { |asset, opts| include_cdn_asset asset, opts }.join("\n").html_safe
     end
 
-    def include_cdn_asset(asset, opts)
+    def include_cdn_asset(asset, opts = {})
+      raise ArgumentError, 'Asset CDN not specified' if !opts.has_key? :c
+      raise ArgumentError, 'Asset version not specified' if !opts.has_key? :v
+
       cdn = opts.delete(:c).to_sym
       version = opts.delete(:v).to_s
 
