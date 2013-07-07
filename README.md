@@ -42,12 +42,13 @@ cdn_assets bootstrap_css: { v: '2.3.2', c: :netdna }, font_awesome: { v: '3.2.1'
 
 ## Supported Assets & CDNs
 
-Below is a matrix showing the assets and CDNs currently supported by this gem. A `+` indicates something *is* supported. Use the exact names listed here as symbols or strings in your code.
+Below is a matrix showing the assets and CDNs currently supported by this gem, ordered alphabetically. Use the exact names listed here as symbols or strings in your code.
 
-|                        | google | netdna | cdnjs | microsoft |
-|:-----------------------|:------:|:------:|:-----:|:---------:|
-| jquery                 | +      |        | +     | +         |
-| bootstrap_css          |        | +      |       |           |
-| bootstrap_no_icons_css |        | +      |       |           |
-| bootstrap_js           |        | +      | +     |           |
-| font_awesome           |        | +      | +     |           |
+|                                | **cdnjs** | **google** | **microsoft** | **netdna** |
+|:-------------------------------|:---------:|:----------:|:-------------:|:----------:|
+| **bootstrap**                  | :+1:      |            |               |            |
+| **bootstrap_js**               | :+1:      |            |               | :+1:       |
+| **bootstrap_responsive**       | :+1:      |            |               | :+1:       |
+| **bootstrap_responsive_icons** |           |            |               | :+1:       |
+| **font_awesome**               | :+1:      |            |               | :+1:       |
+| **jquery**                     | :+1:      | :+1:       | :+1:          |            |
