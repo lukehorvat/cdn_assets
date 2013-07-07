@@ -16,7 +16,6 @@ module CdnAssets
         netdna: '//netdna.bootstrapcdn.com/twitter-bootstrap/%s/css/bootstrap-combined.min.css'
       },
       font_awesome: {
-        cdnjs: '//cdnjs.cloudflare.com/ajax/libs/font-awesome/%s/css/font-awesome.min.css',
         netdna: '//netdna.bootstrapcdn.com/font-awesome/%s/css/font-awesome.min.css'
       },
       jquery: {
