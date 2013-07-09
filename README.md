@@ -47,8 +47,8 @@ Below is a matrix showing the assets and CDNs currently supported by this gem, o
 |                                | **cdnjs** | **google** | **jsdelivr** | **microsoft** | **netdna** |
 |:-------------------------------|:---------:|:----------:|:------------:|:-------------:|:----------:|
 | **bootstrap**                  | :+1:      |            | :+1:         |               |            |
+| **bootstrap_combined**         |           |            |              |               | :+1:       |
 | **bootstrap_js**               | :+1:      |            | :+1:         |               | :+1:       |
-| **bootstrap_responsive**       | :+1:      |            | :+1:         |               | :+1:       |
-| **bootstrap_responsive_icons** |           |            |              |               | :+1:       |
-| **font_awesome**               |           |            | :+1:         |               | :+1:       |
+| **bootstrap_responsive**       | :+1:      |            | :+1:         |               |            |
+| **font_awesome**               | :+1:      |            | :+1:         |               | :+1:       |
 | **jquery**                     | :+1:      | :+1:       | :+1:         | :+1:          |            |
