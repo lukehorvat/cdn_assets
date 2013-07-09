@@ -51,4 +51,4 @@ Below is a matrix showing the assets and CDNs currently supported by this gem, o
 | **bootstrap_responsive**       | :+1:      |            | :+1:         |               | :+1:       |
 | **bootstrap_responsive_icons** |           |            |              |               | :+1:       |
 | **font_awesome**               |           |            | :+1:         |               | :+1:       |
-| **jquery**                     | :+1:      | :+1:       |              | :+1:          |            |
+| **jquery**                     | :+1:      | :+1:       | :+1:         | :+1:          |            |

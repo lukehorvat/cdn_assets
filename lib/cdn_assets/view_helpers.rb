@@ -25,6 +25,7 @@ module CdnAssets
       jquery: {
         cdnjs: '//cdnjs.cloudflare.com/ajax/libs/jquery/{v}/jquery.min.js',
         google: '//ajax.googleapis.com/ajax/libs/jquery/{v}/jquery.min.js',
+        jsdelivr: '//cdn.jsdelivr.net/jquery/{v}/jquery-{v}.min.js',
         microsoft: '//ajax.aspnetcdn.com/ajax/jQuery/jquery-{v}.min.js'
       }
     }
