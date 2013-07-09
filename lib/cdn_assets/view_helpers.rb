@@ -2,20 +2,24 @@ module CdnAssets
   module ViewHelpers
     ASSET_CDN_URLS = {
       bootstrap: {
-        cdnjs: '//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/%s/css/bootstrap.min.css'
+        cdnjs: '//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/%s/css/bootstrap.min.css',
+        jsdelivr: '//cdn.jsdelivr.net/bootstrap/%s/css/bootstrap.min.css'
       },
       bootstrap_js: {
         cdnjs: '//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/%s/js/bootstrap.min.js',
+        jsdelivr: '//cdn.jsdelivr.net/bootstrap/%s/js/bootstrap.min.js',
         netdna: '//netdna.bootstrapcdn.com/twitter-bootstrap/%s/js/bootstrap.min.js'
       },
       bootstrap_responsive: {
-        cdnjs: '//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/%s/css/bootstrap-responsive.css',
+        cdnjs: '//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/%s/css/bootstrap-responsive.min.css',
+        jsdelivr: '//cdn.jsdelivr.net/bootstrap/%s/css/bootstrap-responsive.min.css',
         netdna: '//netdna.bootstrapcdn.com/twitter-bootstrap/%s/css/bootstrap-combined.no-icons.min.css'
       },
       bootstrap_responsive_icons: {
         netdna: '//netdna.bootstrapcdn.com/twitter-bootstrap/%s/css/bootstrap-combined.min.css'
       },
       font_awesome: {
+        jsdelivr: '//cdn.jsdelivr.net/fontawesome/%s/css/font-awesome.min.css',
         netdna: '//netdna.bootstrapcdn.com/font-awesome/%s/css/font-awesome.min.css'
       },
       jquery: {
