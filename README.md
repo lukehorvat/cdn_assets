@@ -1,4 +1,4 @@
-# cdn_assets
+# cdn_assets [![Gem version](http://img.shields.io/gem/v/cdn_assets.svg?style=flat)](http://rubygems.org/gems/cdn_assets)
 
 Easily include popular CDN assets (e.g. jQuery, Twitter Bootstrap, Font Awesome, etc.) in your Ruby on Rails application.
 
